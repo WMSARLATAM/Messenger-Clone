@@ -3,6 +3,7 @@ import { Footer, FooterTab, Button, Icon, Container } from 'native-base'
 
 import HomeScreen from "../screens/Home";
 import CallScreen from "../screens/CallScreen";
+import TakePhoto from "../screens/Camera";
 
 class Toolbar extends Component {
   constructor(props) {
@@ -64,9 +65,9 @@ class Toolbar extends Component {
     let AppComponent = null;
 
     if (this.state.tab1) {
-        AppComponent = HomeScreen 
-    } else if (this.state.tab2){
-        AppComponent = CallScreen
+      AppComponent = HomeScreen 
+    } else if (this.state.tab2) {
+      AppComponent = CallScreen
     }
     return (
       <Container>
@@ -79,14 +80,14 @@ class Toolbar extends Component {
             <Button active={this.state.tab2} onPress={() => this.toggleTab2()}>
               <Icon active={this.state.tab2} name="phone" type="MaterialIcons" />
             </Button>
-            <Button active={this.state.tab3} onPress={() => this.toggleTab3()}>
+            <Button active={this.state.tab3} onPress={() => this.props.navigation.navigate('Camera')}>
               <Icon active={this.state.tab3} name="camera" />
             </Button>
             <Button active={this.state.tab4} onPress={() => this.toggleTab4()}>
               <Icon active={this.state.tab4} name="people" type="MaterialIcons"/>
             </Button>
             <Button active={this.state.tab5} onPress={() => this.toggleTab5()}>
-              <Icon active={this.state.tab5} name="gamepad" type="FontAwesome" />
+              <Icon active={this.state.tab5} name="game-controller-b" type="Ionicons" />
             </Button>
           </FooterTab>
         </Footer>

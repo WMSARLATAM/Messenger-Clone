@@ -4,9 +4,9 @@ import { ListItem, Left, Body, Right, Thumbnail, Text } from 'native-base';
 class Users extends Component {
   render() {
     return (
-      <ListItem avatar>
+      <ListItem avatar onPress={() => this.props.navigation.navigate('Chat')}>
         <Left>
-          <Thumbnail source={require('../images/user1.jpeg')} />
+          <Thumbnail source={require('../images/user1.jpeg')}/>
         </Left>
         <Body>
           <Text>Mia Khalifa</Text>

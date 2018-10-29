@@ -15,7 +15,14 @@ class Form extends Component {
         />
         <TouchableHighlight 
           style={styles.button}
-          onPress={() => this.props.navigation.navigate('Home')}>
+          onPress={() => {
+            this.props.navigation.dispatch(StackActions.reset({
+              index: 0,
+              actions: [
+                NavigationActions.navigate({ routeName: 'Main' })
+              ],
+            }))
+          }}>
           <Text style={styles.text}>Iniciar Sesión</Text>
         </TouchableHighlight>
       </View>
